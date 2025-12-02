@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "title": "Pokemon Explorer",
+  "description": "A React widget that fetches and displays Pokemon from the PokeAPI",
+  "category": "Demo",
+  "imageName": "pokemon_widget"
+}
+
