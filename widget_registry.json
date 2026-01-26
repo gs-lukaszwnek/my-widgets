@@ -1,18 +1,77 @@
 {
   "widgets": [
     {
-      "title": "Pokemon Explorer",
-      "description": "A React widget that fetches and displays Pokemon from the PokeAPI",
+      "title": "Card Grid",
+      "description": "A configurable card grid widget demonstrating dynamic layout and styling options",
       "version": "1.0.0",
       "category": "Demo",
-      "type": "pokemon_widget",
-      "imageName": "pokemon_widget",
+      "type": "card_grid",
+      "imageName": "banner",
       "content": {
-        "endpoint": "https://raw.githubusercontent.com/gs-lukaszwnek/my-widgets/refs/heads/main/widgets/pokemon_widget/content.html",
+        "endpoint": "./widgets/card_grid/content.html",
         "method": "GET",
         "requiresAuthentication": false,
         "cacheStrategy": "no-cache"
       },
+      "configuration": {
+        "properties": {
+          "test": 1
+        }
+      },
+      "defaultConfig": {
+        "cards_per_row": 3,
+        "card_background": "#ffffff",
+        "card_text_color": "#1f2937",
+        "accent_color": "#3b82f6",
+        "title_size": "medium",
+        "card_style": "shadow",
+        "show_icons": "yes"
+      },
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": false,
+        "movable": false
+      }
+    },
+    {
+      "title": "Demo widget",
+      "description": "Demo widget for presentation purposes",
+      "version": "1.0.0",
+      "category": "Demo",
+      "type": "demo_widget",
+      "imageName": "demo_widget",
+      "content": {
+        "endpoint": "./widgets/demo_widget/content.html",
+        "method": "GET",
+        "requiresAuthentication": false,
+        "cacheStrategy": "no-cache"
+      },
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": false,
+        "movable": false
+      }
+    },
+    {
+      "title": "Hello World Widget",
+      "description": "A simple React widget displaying Hello World with custom styling",
+      "version": "1.0.0",
+      "category": "Demo",
+      "type": "react_hello_world",
+      "imageName": "react_hello_world",
+      "content": [],
       "containers": [
         "Full width"
       ],
