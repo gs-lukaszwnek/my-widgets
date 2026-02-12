@@ -2,6 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 
+window.WIDGET_BASE_URL =
+  (document.currentScript as HTMLScriptElement)?.src.replace(/[^/]+$/, "") ??
+  "";
+
 function renderWidget(container: HTMLElement) {
   if (container.hasAttribute("data-pokemon-initialized")) return;
   container.setAttribute("data-pokemon-initialized", "true");
@@ -9,7 +13,7 @@ function renderWidget(container: HTMLElement) {
   createRoot(container).render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
   );
 }
 
