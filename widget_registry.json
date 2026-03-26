@@ -1,28 +1,48 @@
 {
   "widgets": [
     {
-      "title": "Pokemon Explorer",
-      "description": "A React widget that fetches and displays Pokemon from the PokeAPI",
+      "type": "test",
+      "title": "Test",
       "version": "1.0.0",
-      "category": "Demo",
-      "type": "pokemon_widget",
-      "imageName": "pokemon_widget",
-      "content": {
-        "endpoint": "https://raw.githubusercontent.com/gs-lukaszwnek/my-widgets/refs/heads/main/widgets/pokemon_widget/content.html",
-        "method": "GET",
-        "requiresAuthentication": false,
-        "cacheStrategy": "no-cache"
-      },
+      "category": "My Widgets",
+      "imageSrc": "widgets/test/thumbnail.png",
+      "widgetsLibrary": true,
       "containers": [
         "Full width"
       ],
-      "widgetsLibrary": true,
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
         "shared": false,
         "movable": false
+      },
+      "source": {
+        "path": "widgets/test/dist",
+        "entry": "index.html"
+      },
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Title",
+            "defaultValue": "Test",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "label": "Description",
+            "defaultValue": "A widget built with React and the Widget SDK."
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Test",
+        "description": "A widget built with React and the Widget SDK."
       }
     }
   ]
