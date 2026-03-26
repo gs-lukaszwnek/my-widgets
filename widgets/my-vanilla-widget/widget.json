@@ -1,0 +1,34 @@
+{
+  "version": "1.1.0",
+  "title": "Random Dog (Vanilla)",
+  "description": "Pick a breed and pull a random photo of that dog from the Dog CEO API.",
+  "category": "My Widgets",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Heading",
+        "defaultValue": "Random Dog",
+        "rules": {
+          "required": true
+        }
+      },
+      {
+        "name": "defaultBreed",
+        "type": "text",
+        "label": "Default breed (lowercase, e.g. hound, bulldog)",
+        "defaultValue": "hound"
+      }
+    ]
+  },
+  "defaultConfig": {
+    "title": "Random Dog",
+    "defaultBreed": "hound"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "1.1.0",
+  "title": "Pokédex (React)",
+  "description": "Search any Pokémon and see its sprite, types, and base stats — powered by PokéAPI.",
+  "category": "My Widgets",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Heading",
+        "defaultValue": "Pokédex",
+        "rules": {
+          "required": true
+        }
+      },
+      {
+        "name": "defaultPokemon",
+        "type": "text",
+        "label": "Default Pokémon (name or ID)",
+        "defaultValue": "pikachu"
+      }
+    ]
+  },
+  "defaultConfig": {
+    "title": "Pokédex",
+    "defaultPokemon": "pikachu"
+  }
+}

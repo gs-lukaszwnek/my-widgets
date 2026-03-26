@@ -1,0 +1,34 @@
+{
+  "version": "1.1.0",
+  "title": "Country Explorer (Vue)",
+  "description": "Look up any country by 2- or 3-letter code and see its flag, region, capital, population, and languages — powered by REST Countries.",
+  "category": "My Widgets",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Heading",
+        "defaultValue": "Country Explorer",
+        "rules": {
+          "required": true
+        }
+      },
+      {
+        "name": "defaultCode",
+        "type": "text",
+        "label": "Default country code (cca2 or cca3)",
+        "defaultValue": "pl"
+      }
+    ]
+  },
+  "defaultConfig": {
+    "title": "Country Explorer",
+    "defaultCode": "pl"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "widgets": [
+    {
+      "version": "1.1.0",
+      "title": "Pokédex (React)",
+      "description": "Search any Pokémon and see its sprite, types, and base stats — powered by PokéAPI.",
+      "category": "My Widgets",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "Pokédex",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "defaultPokemon",
+            "type": "text",
+            "label": "Default Pokémon (name or ID)",
+            "defaultValue": "pikachu"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Pokédex",
+        "defaultPokemon": "pikachu"
+      },
+      "type": "my-react-widget",
+      "source": {
+        "path": "widgets/my-react-widget/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/my-react-widget/thumbnail.png"
+    },
+    {
+      "version": "1.1.0",
+      "title": "Country Explorer (Vue)",
+      "description": "Look up any country by 2- or 3-letter code and see its flag, region, capital, population, and languages — powered by REST Countries.",
+      "category": "My Widgets",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "Country Explorer",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "defaultCode",
+            "type": "text",
+            "label": "Default country code (cca2 or cca3)",
+            "defaultValue": "pl"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Country Explorer",
+        "defaultCode": "pl"
+      },
+      "type": "my-vue-widget",
+      "source": {
+        "path": "widgets/my-vue-widget/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/my-vue-widget/thumbnail.png"
+    },
+    {
+      "version": "1.1.0",
+      "title": "Star Wars Browser (Angular)",
+      "description": "Search the Star Wars universe by character name and see height, mass, and birth year — powered by SWAPI.",
+      "category": "My Widgets",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "Star Wars Browser",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "defaultQuery",
+            "type": "text",
+            "label": "Default search query",
+            "defaultValue": "sky"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Star Wars Browser",
+        "defaultQuery": "sky"
+      },
+      "type": "my-angular-widget",
+      "source": {
+        "path": "widgets/my-angular-widget/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/my-angular-widget/thumbnail.png"
+    },
+    {
+      "version": "1.1.0",
+      "title": "Random Dog (Vanilla)",
+      "description": "Pick a breed and pull a random photo of that dog from the Dog CEO API.",
+      "category": "My Widgets",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "Random Dog",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "defaultBreed",
+            "type": "text",
+            "label": "Default breed (lowercase, e.g. hound, bulldog)",
+            "defaultValue": "hound"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Random Dog",
+        "defaultBreed": "hound"
+      },
+      "type": "my-vanilla-widget",
+      "source": {
+        "path": "widgets/my-vanilla-widget/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/my-vanilla-widget/thumbnail.png"
+    },
+    {
+      "version": "1.0.0",
+      "title": "My Html Widget",
+      "description": "A widget built with HTML and the Widget SDK.",
+      "category": "My Widgets",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Title",
+            "defaultValue": "My Html Widget",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "label": "Description",
+            "defaultValue": "A widget built with HTML and the Widget SDK."
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "My Html Widget",
+        "description": "A widget built with HTML and the Widget SDK."
+      },
+      "type": "my-html-widget",
+      "source": {
+        "path": "widgets/my-html-widget/dist",
+        "entry": "content.html"
+      },
+      "imageSrc": "widgets/my-html-widget/thumbnail.png"
+    }
+  ]
+}
