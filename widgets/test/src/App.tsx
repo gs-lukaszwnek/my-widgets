@@ -8,6 +8,7 @@ export function App({ sdk }: { sdk: WidgetSDK }) {
 
   return (
     <section className="react-widget-section">
+      <h1>hello world!</h1>
       <h3 className="react-widget-title">{props.title}</h3>
       {props.description && (
         <p className="react-widget-description">{props.description}</p>
