@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    cors: true,
+  },
   define: {
     "process.env.NODE_ENV": JSON.stringify("production"),
   },
