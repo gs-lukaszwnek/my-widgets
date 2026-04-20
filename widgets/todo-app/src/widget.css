@@ -1,0 +1,100 @@
+:host,
+sp-theme.todo-theme {
+  display: block;
+  width: 100%;
+}
+
+.todo-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--spectrum-background-layer-2-color, #ffffff);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todo-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.todo-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--spectrum-heading-color, #1e1e2e);
+}
+
+.todo-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--spectrum-body-color, #5c5c6b);
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.todo-form-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.todo-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.todo-toast {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.todo-status {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  background: var(--spectrum-background-layer-1-color, #f4f4f7);
+}
+
+.todo-item-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--spectrum-body-color, #1e1e2e);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.todo-empty {
+  margin: 0;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--spectrum-body-color, #8a8a99);
+  font-size: 0.9375rem;
+}

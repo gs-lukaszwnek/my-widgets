@@ -1,0 +1,105 @@
+{
+  "connectors": [
+    {
+      "name": "Supabase Todos — List",
+      "permalink": "todo-app-list",
+      "url": "{{ get_secret('SUPABASE_URL') }}/rest/v1/todos",
+      "method": "GET",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "overridable": false
+        }
+      ],
+      "query_parameters": [
+        {
+          "key": "select",
+          "value": "*",
+          "overridable": false
+        },
+        {
+          "key": "order",
+          "value": "created_at.desc",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Supabase Todos — Create",
+      "permalink": "todo-app-create",
+      "url": "{{ get_secret('SUPABASE_URL') }}/rest/v1/todos",
+      "method": "POST",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "overridable": false
+        },
+        {
+          "key": "Prefer",
+          "value": "return=representation",
+          "overridable": false
+        }
+      ],
+      "request_body": "{{ json_encode(payload) }}",
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Supabase Todos — Delete",
+      "permalink": "todo-app-delete",
+      "url": "{{ get_secret('SUPABASE_URL') }}/rest/v1/todos",
+      "method": "DELETE",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        }
+      ],
+      "query_parameters": [
+        {
+          "key": "id",
+          "value": "",
+          "overridable": true
+        }
+      ],
+      "response_content_type": "application/json"
+    }
+  ]
+}

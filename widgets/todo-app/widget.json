@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "title": "Todo App",
+  "description": "Create, view, and delete todos, stored in Supabase. UI built with Adobe Spectrum Web Components.",
+  "category": "Productivity",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Heading",
+        "defaultValue": "My Todos",
+        "rules": {
+          "required": true,
+          "maxLength": 80
+        }
+      }
+    ]
+  },
+  "defaultConfig": {
+    "title": "My Todos"
+  }
+}
