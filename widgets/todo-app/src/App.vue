@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from "vue";
-import type { WidgetProps, WidgetSDK } from "./types";
+import type { ConnectorsSDK, WidgetProps, WidgetSDK } from "./types";
 import { useTodos } from "./composables/useTodos";
 
-const { sdk } = defineProps<{ sdk: WidgetSDK }>();
+const { sdk, connectorsSdk } = defineProps<{ sdk: WidgetSDK; connectorsSdk: ConnectorsSDK }>();
 
 const props = ref<WidgetProps>(sdk.getProps());
 const unsubscribe = sdk.on("propsChanged", (next: WidgetProps) => (props.value = next));
 onUnmounted(unsubscribe);
 
-const { todos, isLoading, isBusy, error, refresh, add, remove, toggle, dismissError } = useTodos(sdk);
+const { todos, isLoading, isBusy, error, refresh, add, remove, toggle, dismissError } = useTodos(connectorsSdk.connectors);
 
 const draft = ref("");
 const composing = ref(false);

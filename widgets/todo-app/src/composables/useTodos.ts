@@ -1,5 +1,7 @@
 import { ref } from "vue";
-import type { Todo, WidgetSDK } from "../types";
+import type { ConnectorsSDK, Todo } from "../types";
+
+type ConnectorRunner = ConnectorsSDK["connectors"];
 
 const toErrorMessage = (value: unknown, fallback: string): string => {
   if (value instanceof Error) return value.message;
@@ -18,7 +20,7 @@ const toTodoArray = (value: unknown): Todo[] => {
   );
 };
 
-export const useTodos = (sdk: WidgetSDK) => {
+export const useTodos = (connectors: ConnectorRunner) => {
   const todos = ref<Todo[]>([]);
   const isLoading = ref(false);
   const isBusy = ref(false);
@@ -28,7 +30,7 @@ export const useTodos = (sdk: WidgetSDK) => {
     isLoading.value = true;
     error.value = null;
     try {
-      const data = await sdk.connectors.execute({
+      const data = await connectors.execute({
         permalink: "todo-app-list",
         method: "GET",
       });
@@ -46,7 +48,7 @@ export const useTodos = (sdk: WidgetSDK) => {
     isBusy.value = true;
     error.value = null;
     try {
-      const created = await sdk.connectors.execute({
+      const created = await connectors.execute({
         permalink: "todo-app-create",
         method: "POST",
         payload: { title: trimmed, completed: false },
@@ -70,7 +72,7 @@ export const useTodos = (sdk: WidgetSDK) => {
     const previous = todos.value;
     todos.value = todos.value.filter((todo) => todo.id !== id);
     try {
-      await sdk.connectors.execute({
+      await connectors.execute({
         permalink: "todo-app-delete",
         method: "DELETE",
         queryParams: { id: `eq.${id}` },
@@ -92,7 +94,7 @@ export const useTodos = (sdk: WidgetSDK) => {
       todo.id === id ? { ...todo, completed } : todo
     );
     try {
-      await sdk.connectors.execute({
+      await connectors.execute({
         permalink: "todo-app-toggle",
         method: "PATCH",
         queryParams: { id: `eq.${id}` },

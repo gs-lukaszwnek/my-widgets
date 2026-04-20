@@ -29,7 +29,16 @@ export interface WidgetSDK {
   getProps(): WidgetProps;
   on(event: string, callback: (data: any) => void): () => void;
   emit(event: string, data?: unknown): void;
+}
+
+export interface ConnectorsSDK {
   connectors: {
     execute<T = unknown>(input: ConnectorExecuteInput): Promise<T>;
   };
+}
+
+declare global {
+  interface Window {
+    WidgetServiceSDK?: new () => ConnectorsSDK;
+  }
 }
