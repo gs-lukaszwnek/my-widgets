@@ -1,0 +1,71 @@
+{
+  "connectors": [
+    {
+      "name": "Todo App List",
+      "permalink": "todo-app-list",
+      "url": "https://eiogdaubcavdlyatlcer.supabase.co/rest/v1/todos",
+      "method": "GET",
+      "headers": [
+        { "key": "apikey", "value": "{{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Authorization", "value": "Bearer {{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "select", "value": "*", "overridable": false },
+        { "key": "order", "value": "created_at.desc", "overridable": false }
+      ],
+      "response_content_type": "application/json",
+      "authentication": { "type": "none", "config": {} },
+      "cacheStrategy": "none"
+    },
+    {
+      "name": "Todo App Create",
+      "permalink": "todo-app-create",
+      "url": "https://eiogdaubcavdlyatlcer.supabase.co/rest/v1/todos",
+      "method": "POST",
+      "headers": [
+        { "key": "apikey", "value": "{{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Authorization", "value": "Bearer {{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Content-Type", "value": "application/json", "overridable": false },
+        { "key": "Prefer", "value": "return=representation", "overridable": false }
+      ],
+      "response_content_type": "application/json",
+      "authentication": { "type": "none", "config": {} },
+      "cacheStrategy": "none"
+    },
+    {
+      "name": "Todo App Delete",
+      "permalink": "todo-app-delete",
+      "url": "https://eiogdaubcavdlyatlcer.supabase.co/rest/v1/todos",
+      "method": "DELETE",
+      "headers": [
+        { "key": "apikey", "value": "{{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Authorization", "value": "Bearer {{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "id", "value": "", "overridable": true }
+      ],
+      "response_content_type": "application/json",
+      "authentication": { "type": "none", "config": {} },
+      "cacheStrategy": "none"
+    },
+    {
+      "name": "Todo App Toggle",
+      "permalink": "todo-app-toggle",
+      "url": "https://eiogdaubcavdlyatlcer.supabase.co/rest/v1/todos",
+      "method": "PATCH",
+      "headers": [
+        { "key": "apikey", "value": "{{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Authorization", "value": "Bearer {{ get_secret('SUPABASE_PUBLISHABLE_KEY') }}", "overridable": false },
+        { "key": "Content-Type", "value": "application/json", "overridable": false },
+        { "key": "Prefer", "value": "return=representation", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "id", "value": "", "overridable": true }
+      ],
+      "response_content_type": "application/json",
+      "authentication": { "type": "none", "config": {} },
+      "cacheStrategy": "none"
+    }
+  ]
+}

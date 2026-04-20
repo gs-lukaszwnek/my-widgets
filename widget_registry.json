@@ -1,11 +1,11 @@
 {
   "widgets": [
     {
-      "type": "test-react",
-      "title": "Test React",
+      "type": "todo-app",
+      "title": "Todo App",
       "version": "1.0.0",
-      "category": "My Widgets",
-      "imageSrc": "widgets/test-react/thumbnail.png",
+      "category": "Productivity",
+      "imageSrc": "widgets/todo-app/thumbnail.png",
       "widgetsLibrary": true,
       "containers": [
         "Full width"
@@ -18,7 +18,7 @@
         "movable": false
       },
       "source": {
-        "path": "widgets/test-react/dist",
+        "path": "widgets/todo-app/dist",
         "entry": "index.html"
       },
       "configuration": {
@@ -27,22 +27,37 @@
             "name": "title",
             "type": "text",
             "label": "Title",
-            "defaultValue": "Test React",
+            "defaultValue": "My Todos",
             "rules": {
-              "required": true
+              "required": true,
+              "maxLength": 60
             }
           },
           {
-            "name": "description",
+            "name": "placeholder",
             "type": "text",
-            "label": "Description",
-            "defaultValue": "A widget built with React and the Widget SDK."
+            "label": "Input placeholder",
+            "defaultValue": "What needs doing?",
+            "rules": {
+              "maxLength": 80
+            }
+          },
+          {
+            "name": "theme",
+            "type": "select",
+            "label": "Theme",
+            "defaultValue": "light",
+            "options": [
+              { "label": "Light", "value": "light" },
+              { "label": "Dark", "value": "dark" }
+            ]
           }
         ]
       },
       "defaultConfig": {
-        "title": "Test React",
-        "description": "A widget built with React and the Widget SDK."
+        "title": "My Todos",
+        "placeholder": "What needs doing?",
+        "theme": "light"
       }
     }
   ]

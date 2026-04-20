@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "title": "Todo App",
+  "description": "A Vue + Adobe Spectrum todo app backed by Supabase.",
+  "category": "Productivity",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Title",
+        "defaultValue": "My Todos",
+        "rules": {
+          "required": true,
+          "maxLength": 60
+        }
+      },
+      {
+        "name": "placeholder",
+        "type": "text",
+        "label": "Input placeholder",
+        "defaultValue": "What needs doing?",
+        "rules": {
+          "maxLength": 80
+        }
+      },
+      {
+        "name": "theme",
+        "type": "select",
+        "label": "Theme",
+        "defaultValue": "light",
+        "options": [
+          { "label": "Light", "value": "light" },
+          { "label": "Dark", "value": "dark" }
+        ]
+      }
+    ]
+  },
+  "defaultConfig": {
+    "title": "My Todos",
+    "placeholder": "What needs doing?",
+    "theme": "light"
+  }
+}
