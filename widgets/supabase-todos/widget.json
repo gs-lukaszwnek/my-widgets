@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "title": "Supabase Todos",
+  "description": "Todo list persisted in Supabase, styled with Adobe Spectrum.",
+  "category": "Productivity",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "heading",
+        "type": "text",
+        "label": "Heading",
+        "defaultValue": "My Todos",
+        "rules": {
+          "required": true
+        }
+      },
+      {
+        "name": "emptyStateText",
+        "type": "text",
+        "label": "Empty state message",
+        "defaultValue": "No todos yet \u2014 add your first one below."
+      },
+      {
+        "name": "pageSize",
+        "type": "number",
+        "label": "Max items to display",
+        "defaultValue": 20,
+        "rules": {
+          "required": true
+        }
+      },
+      {
+        "name": "theme",
+        "type": "select",
+        "label": "Spectrum theme",
+        "defaultValue": "light",
+        "options": [
+          { "label": "Light", "value": "light" },
+          { "label": "Dark", "value": "dark" }
+        ]
+      }
+    ]
+  },
+  "defaultConfig": {
+    "heading": "My Todos",
+    "emptyStateText": "No todos yet \u2014 add your first one below.",
+    "pageSize": 20,
+    "theme": "light"
+  }
+}

@@ -1,0 +1,4 @@
+:host,
+:host * {
+  box-sizing: border-box;
+}

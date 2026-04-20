@@ -1,0 +1,77 @@
+{
+  "connectors": [
+    {
+      "permalink": "supabase-todos-list",
+      "name": "Supabase Todos \u2014 List",
+      "url": "https://YOUR_SUPABASE_PROJECT_REF.supabase.co/rest/v1/todos",
+      "method": "GET",
+      "authentication": {
+        "type": "apikey",
+        "config": {
+          "key": "apikey",
+          "value": "{{ get_secret('supabase_anon_key') }}",
+          "in": "header"
+        }
+      },
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('supabase_anon_key') }}",
+          "overridable": false
+        }
+      ],
+      "query_parameters": [
+        { "key": "select", "value": "id,title,created_at", "overridable": false },
+        { "key": "order", "value": "created_at.desc", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "permalink": "supabase-todos-create",
+      "name": "Supabase Todos \u2014 Create",
+      "url": "https://YOUR_SUPABASE_PROJECT_REF.supabase.co/rest/v1/todos",
+      "method": "POST",
+      "authentication": {
+        "type": "apikey",
+        "config": {
+          "key": "apikey",
+          "value": "{{ get_secret('supabase_anon_key') }}",
+          "in": "header"
+        }
+      },
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('supabase_anon_key') }}",
+          "overridable": false
+        },
+        { "key": "Content-Type", "value": "application/json", "overridable": false },
+        { "key": "Prefer", "value": "return=representation", "overridable": false }
+      ],
+      "request_body": "{ \"title\": \"{{ payload.title }}\" }",
+      "response_content_type": "application/json"
+    },
+    {
+      "permalink": "supabase-todos-delete",
+      "name": "Supabase Todos \u2014 Delete",
+      "url": "https://YOUR_SUPABASE_PROJECT_REF.supabase.co/rest/v1/todos",
+      "method": "DELETE",
+      "authentication": {
+        "type": "apikey",
+        "config": {
+          "key": "apikey",
+          "value": "{{ get_secret('supabase_anon_key') }}",
+          "in": "header"
+        }
+      },
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('supabase_anon_key') }}",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "widgets": [
     {
-      "type": "test-react",
-      "title": "Test React",
+      "type": "supabase-todos",
+      "title": "Supabase Todos",
       "version": "1.0.0",
-      "category": "My Widgets",
-      "imageSrc": "widgets/test-react/thumbnail.png",
+      "category": "Productivity",
+      "imageSrc": "widgets/supabase-todos/thumbnail.png",
       "widgetsLibrary": true,
       "containers": [
         "Full width"
@@ -18,31 +18,52 @@
         "movable": false
       },
       "source": {
-        "path": "widgets/test-react/dist",
+        "path": "widgets/supabase-todos/dist",
         "entry": "index.html"
       },
       "configuration": {
         "properties": [
           {
-            "name": "title",
+            "name": "heading",
             "type": "text",
-            "label": "Title",
-            "defaultValue": "Test React",
+            "label": "Heading",
+            "defaultValue": "My Todos",
             "rules": {
               "required": true
             }
           },
           {
-            "name": "description",
+            "name": "emptyStateText",
             "type": "text",
-            "label": "Description",
-            "defaultValue": "A widget built with React and the Widget SDK."
+            "label": "Empty state message",
+            "defaultValue": "No todos yet \u2014 add your first one below."
+          },
+          {
+            "name": "pageSize",
+            "type": "number",
+            "label": "Max items to display",
+            "defaultValue": 20,
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "theme",
+            "type": "select",
+            "label": "Spectrum theme",
+            "defaultValue": "light",
+            "options": [
+              { "label": "Light", "value": "light" },
+              { "label": "Dark", "value": "dark" }
+            ]
           }
         ]
       },
       "defaultConfig": {
-        "title": "Test React",
-        "description": "A widget built with React and the Widget SDK."
+        "heading": "My Todos",
+        "emptyStateText": "No todos yet \u2014 add your first one below.",
+        "pageSize": 20,
+        "theme": "light"
       }
     }
   ]
