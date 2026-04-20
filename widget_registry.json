@@ -91,6 +91,52 @@
         "entry": "index.html"
       },
       "imageSrc": "widgets/todo-app/thumbnail.png"
+    },
+    {
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": true,
+        "movable": true
+      },
+      "version": "1.0.0",
+      "title": "Todo Carbon",
+      "description": "Create, view, and delete todos stored in Supabase. Styled with IBM Carbon Design System.",
+      "category": "Productivity",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "My todos",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "placeholder",
+            "type": "text",
+            "label": "Input placeholder",
+            "defaultValue": "What needs doing?"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "My todos",
+        "placeholder": "What needs doing?"
+      },
+      "type": "todo-carbon",
+      "source": {
+        "path": "widgets/todo-carbon/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/todo-carbon/thumbnail.png"
     }
   ]
 }
