@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, onUnmounted, ref, watch } from "vue";
 import type { ConnectorsSDK, WidgetProps, WidgetSDK } from "./types";
 import { useTodos } from "./composables/useTodos";
 
@@ -23,6 +23,8 @@ const placeholder = computed(
 );
 
 const draft = ref("");
+const textfieldRef = ref<Element | null>(null);
+
 const {
   todos,
   loading,
@@ -40,17 +42,55 @@ const remaining = computed(
   () => todos.value.filter((todo) => !todo.completed).length,
 );
 
+const readElementValue = (element: Element | null): string => {
+  if (element === null) return "";
+  const value = Reflect.get(element, "value");
+  return typeof value === "string" ? value : "";
+};
+
+const writeElementValue = (element: Element | null, value: string) => {
+  if (element === null) return;
+  Reflect.set(element, "value", value);
+};
+
+const syncDraft = (event: Event) => {
+  const value = readElementValue(textfieldRef.value);
+  console.log("[todo-app] sync", { eventType: event.type, value });
+  draft.value = value;
+};
+
+let detachListeners: (() => void) | null = null;
+
+onMounted(() => {
+  const element = textfieldRef.value;
+  console.log("[todo-app] mounted, textfieldRef=", element);
+  if (element === null) return;
+  element.addEventListener("input", syncDraft);
+  element.addEventListener("change", syncDraft);
+  detachListeners = () => {
+    element.removeEventListener("input", syncDraft);
+    element.removeEventListener("change", syncDraft);
+  };
+});
+
+onBeforeUnmount(() => {
+  detachListeners?.();
+  detachListeners = null;
+});
+
+watch(draft, (value) => {
+  if (readElementValue(textfieldRef.value) !== value) {
+    writeElementValue(textfieldRef.value, value);
+  }
+});
+
 const onSubmit = async (event: Event) => {
   event.preventDefault();
   if (creating.value || draft.value.trim().length === 0) return;
   const text = draft.value;
   draft.value = "";
+  writeElementValue(textfieldRef.value, "");
   await createTodo(text);
-};
-
-const onInput = (event: Event) => {
-  const target = event.target;
-  if (target instanceof HTMLInputElement) draft.value = target.value;
 };
 </script>
 
@@ -80,11 +120,10 @@ const onInput = (event: Event) => {
 
     <form class="todo-form" @submit="onSubmit">
       <sp-textfield
+        ref="textfieldRef"
         class="todo-input"
         :placeholder="placeholder"
-        :value="draft"
         :disabled="creating"
-        @input="onInput"
       ></sp-textfield>
       <sp-button
         variant="accent"

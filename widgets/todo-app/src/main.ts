@@ -36,6 +36,7 @@ const loadConnectorsSDK = (): ConnectorsSDK | null => {
 };
 
 export async function init(sdk: WidgetSDK) {
+  console.log("[todo-app] init v3");
   await sdk.whenReady();
   const style = document.createElement("style");
   style.textContent = currentCss;
