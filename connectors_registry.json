@@ -1,0 +1,144 @@
+{
+  "connectors": [
+    {
+      "name": "todo-app-create-todo",
+      "url": "https://wdcitoriqqkzvmxwgdfk.supabase.co/rest/v1/todos",
+      "method": "POST",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "overridable": false
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "overridable": false
+        },
+        {
+          "key": "Prefer",
+          "value": "return=representation",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json",
+      "permalink": "todo-app-create-todo"
+    },
+    {
+      "name": "todo-app-delete-todo",
+      "url": "https://wdcitoriqqkzvmxwgdfk.supabase.co/rest/v1/todos",
+      "method": "DELETE",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json",
+      "permalink": "todo-app-delete-todo"
+    },
+    {
+      "name": "todo-app-list-todos",
+      "url": "https://wdcitoriqqkzvmxwgdfk.supabase.co/rest/v1/todos",
+      "method": "GET",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "overridable": false
+        }
+      ],
+      "query_parameters": [
+        {
+          "key": "select",
+          "value": "*",
+          "overridable": false
+        },
+        {
+          "key": "order",
+          "value": "created_at.desc",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json",
+      "permalink": "todo-app-list-todos"
+    },
+    {
+      "name": "todo-app-update-todo",
+      "url": "https://wdcitoriqqkzvmxwgdfk.supabase.co/rest/v1/todos",
+      "method": "PATCH",
+      "authentication": {
+        "type": "none"
+      },
+      "headers": [
+        {
+          "key": "apikey",
+          "value": "{{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer {{ get_secret('SUPABASE_ANON_KEY') }}",
+          "overridable": false
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "overridable": false
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "overridable": false
+        },
+        {
+          "key": "Prefer",
+          "value": "return=representation",
+          "overridable": false
+        }
+      ],
+      "response_content_type": "application/json",
+      "permalink": "todo-app-update-todo"
+    }
+  ]
+}

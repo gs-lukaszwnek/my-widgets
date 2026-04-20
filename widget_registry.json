@@ -1,26 +1,21 @@
 {
   "widgets": [
     {
-      "type": "test-react",
-      "title": "Test React",
-      "version": "1.0.0",
-      "category": "My Widgets",
-      "imageSrc": "widgets/test-react/thumbnail.png",
-      "widgetsLibrary": true,
       "containers": [
         "Full width"
       ],
+      "widgetsLibrary": true,
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
-        "shared": false,
-        "movable": false
+        "shared": true,
+        "movable": true
       },
-      "source": {
-        "path": "widgets/test-react/dist",
-        "entry": "index.html"
-      },
+      "version": "1.0.0",
+      "title": "Test React",
+      "description": "A widget built with React and the Widget SDK.",
+      "category": "Demo",
       "configuration": {
         "properties": [
           {
@@ -43,7 +38,59 @@
       "defaultConfig": {
         "title": "Test React",
         "description": "A widget built with React and the Widget SDK."
-      }
+      },
+      "type": "test-react",
+      "source": {
+        "path": "widgets/test-react/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/test-react/thumbnail.png"
+    },
+    {
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": true,
+        "movable": true
+      },
+      "version": "1.0.0",
+      "title": "Todo App",
+      "description": "Create, view, and delete todos stored in Supabase. Styled with Adobe Spectrum 2.",
+      "category": "Productivity",
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Heading",
+            "defaultValue": "My todos",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "placeholder",
+            "type": "text",
+            "label": "Input placeholder",
+            "defaultValue": "What needs doing?"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "My todos",
+        "placeholder": "What needs doing?"
+      },
+      "type": "todo-app",
+      "source": {
+        "path": "widgets/todo-app/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/todo-app/thumbnail.png"
     }
   ]
 }
