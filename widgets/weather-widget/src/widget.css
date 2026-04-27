@@ -1,0 +1,70 @@
+.weather-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.weather-card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #ffffff 0%, #eef4ff 60%, #e0ecff 100%);
+  box-shadow:
+    0 28px 60px -28px rgba(15, 39, 78, 0.45),
+    0 12px 24px -16px rgba(15, 39, 78, 0.22),
+    0 0 0 1px rgba(15, 39, 78, 0.06);
+  overflow: hidden;
+}
+
+.weather-card .card-content {
+  padding: 2.25rem 1.75rem;
+}
+
+.weather-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0 0 0.5rem 0;
+}
+
+.weather-temp {
+  font-size: 4rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.25rem !important;
+  color: #1d2b4f;
+}
+
+.weather-unit {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+  color: #4a5b86;
+}
+
+.weather-stats .heading {
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.weather-stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d2b4f;
+  margin: 0;
+}
+
+.weather-place {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1d2b4f;
+  margin-top: 0.85rem;
+  letter-spacing: 0.01em;
+}

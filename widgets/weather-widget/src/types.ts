@@ -1,4 +1,5 @@
 export interface WidgetProps {
+  temperatureUnit?: string;
   [key: string]: unknown;
 }
 
@@ -7,28 +8,31 @@ export interface WidgetSDK {
   shadowRoot: ShadowRoot;
   getContainer(): Element;
   getProps(): WidgetProps;
-  on(event: string, callback: (data: any) => void): () => void;
+  on(event: string, callback: (data: unknown) => void): () => void;
   emit(event: string, data?: unknown): void;
 }
 
-export interface ExecuteOptions {
+export type HttpMethod =
+  | "GET"
+  | "POST"
+  | "PUT"
+  | "PATCH"
+  | "DELETE"
+  | "HEAD"
+  | "OPTIONS";
+
+export interface ConnectorExecuteArgs {
   permalink: string;
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE" | "HEAD" | "OPTIONS";
+  method: HttpMethod;
+  payload?: Record<string, unknown>;
   queryParams?: Record<string, string>;
   headers?: Record<string, string>;
-  payload?: unknown;
 }
 
 export interface ConnectorsAPI {
-  execute(options: ExecuteOptions): Promise<Record<string, unknown>>;
+  execute(args: ConnectorExecuteArgs): Promise<Record<string, unknown>>;
 }
 
 export interface WidgetServiceSDK {
   connectors: ConnectorsAPI;
-}
-
-declare global {
-  interface Window {
-    WidgetServiceSDK: new () => WidgetServiceSDK;
-  }
 }

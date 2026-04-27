@@ -2,19 +2,29 @@
   "widgets": [
     {
       "version": "1.0.0",
-      "title": "Weather React",
-      "description": "Shows the current temperature for the visitor's geolocated city.",
+      "title": "Weather Widget",
+      "description": "Shows the current weather based on the user's geolocation. Powered by Open-Meteo.",
       "configuration": {
-        "properties": []
+        "properties": [
+          {
+            "name": "temperatureUnit",
+            "type": "text",
+            "label": "Temperature unit",
+            "defaultValue": "celsius",
+            "description": "Use 'celsius' or 'fahrenheit'."
+          }
+        ]
       },
-      "defaultConfig": {},
-      "type": "weather-react",
-      "category": "Demo",
+      "defaultConfig": {
+        "temperatureUnit": "celsius"
+      },
+      "type": "weather-widget",
+      "category": "Utilities",
       "source": {
-        "path": "widgets/weather-react/dist",
+        "path": "widgets/weather-widget/dist",
         "entry": "index.html"
       },
-      "imageSrc": "widgets/weather-react/thumbnail.png"
+      "imageSrc": "widgets/weather-widget/thumbnail.png"
     }
   ]
 }
