@@ -1,0 +1,26 @@
+{
+  "connectors": [
+    {
+      "name": "Weather Now Open-Meteo Forecast",
+      "permalink": "weather-now-forecast",
+      "url": "https://api.open-meteo.com/v1/forecast",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Weather Now BigDataCloud Reverse Geocode",
+      "permalink": "weather-now-reverse-geocode",
+      "url": "https://api.bigdatacloud.net/data/reverse-geocode-client",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    }
+  ]
+}

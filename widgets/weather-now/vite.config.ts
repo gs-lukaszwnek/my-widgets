@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  define: {
-    "process.env.NODE_ENV": JSON.stringify("production"),
+  server: {
+    cors: true,
   },
+  define: command === "build" ? { "process.env.NODE_ENV": JSON.stringify("production") } : {},
   build: {
     lib: {
       entry: "src/main.tsx",
@@ -13,4 +14,4 @@ export default defineConfig({
       fileName: "widget",
     },
   },
-});
+}));

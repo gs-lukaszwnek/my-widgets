@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "title": "Weather Now",
+  "description": "Live local weather based on the viewer's geolocation, with city name and current conditions.",
+  "category": "Demos",
+  "imageSrc": "thumbnail.png",
+  "source": {
+    "path": "dist",
+    "entry": "index.html"
+  },
+  "configuration": {
+    "properties": [
+      {
+        "name": "units",
+        "type": "select",
+        "label": "Temperature units",
+        "defaultValue": "celsius",
+        "rules": {
+          "required": true,
+          "options": [
+            { "label": "Celsius (°C)", "value": "celsius" },
+            { "label": "Fahrenheit (°F)", "value": "fahrenheit" }
+          ]
+        }
+      },
+      {
+        "name": "accent",
+        "type": "select",
+        "label": "Accent color",
+        "defaultValue": "indigo",
+        "rules": {
+          "required": true,
+          "options": [
+            { "label": "Indigo", "value": "indigo" },
+            { "label": "Violet", "value": "violet" },
+            { "label": "Cyan", "value": "cyan" },
+            { "label": "Emerald", "value": "emerald" }
+          ]
+        }
+      }
+    ]
+  },
+  "defaultConfig": {
+    "units": "celsius",
+    "accent": "indigo"
+  }
+}
