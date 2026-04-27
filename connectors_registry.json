@@ -1,0 +1,35 @@
+{
+  "connectors": [
+    {
+      "name": "weather-react-reverse-geocode",
+      "url": "https://api.bigdatacloud.net/data/reverse-geocode-client",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "latitude", "value": "", "overridable": true },
+        { "key": "longitude", "value": "", "overridable": true },
+        { "key": "localityLanguage", "value": "en", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "weather-react-current-weather",
+      "url": "https://api.open-meteo.com/v1/forecast",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "latitude", "value": "", "overridable": true },
+        { "key": "longitude", "value": "", "overridable": true },
+        { "key": "current", "value": "temperature_2m", "overridable": false },
+        { "key": "temperature_unit", "value": "celsius", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    }
+  ]
+}

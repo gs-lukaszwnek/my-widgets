@@ -1,0 +1,20 @@
+{
+  "widgets": [
+    {
+      "version": "1.0.0",
+      "title": "Weather React",
+      "description": "Shows the current temperature for the visitor's geolocated city.",
+      "configuration": {
+        "properties": []
+      },
+      "defaultConfig": {},
+      "type": "weather-react",
+      "category": "Demo",
+      "source": {
+        "path": "widgets/weather-react/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/weather-react/thumbnail.png"
+    }
+  ]
+}
