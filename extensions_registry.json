@@ -1,0 +1,35 @@
+{
+  "widgets": [
+    {
+      "version": "1.0.0",
+      "title": "Aha Ideas",
+      "description": "Browse, vote on, and submit ideas to your Aha! product feedback portal.",
+      "configuration": {
+        "properties": [
+          {
+            "name": "productKey",
+            "type": "text",
+            "label": "Optional: lock to a single Aha! product (e.g. PRJ1). Leave blank to let users pick from a dropdown."
+          },
+          {
+            "name": "pageSize",
+            "type": "number",
+            "label": "Ideas per page (max 200)",
+            "defaultValue": 20
+          }
+        ]
+      },
+      "defaultConfig": {
+        "productKey": "",
+        "pageSize": 20
+      },
+      "type": "aha-ideas",
+      "category": "Product Feedback",
+      "source": {
+        "path": "widgets/aha-ideas/dist",
+        "entry": "index.html"
+      },
+      "imageSrc": "widgets/aha-ideas/thumbnail.png"
+    }
+  ]
+}

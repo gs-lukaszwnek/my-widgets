@@ -1,0 +1,58 @@
+{
+  "connectors": [
+    {
+      "name": "Aha Ideas - List Products",
+      "permalink": "aha-ideas-products",
+      "url": "https://gainsight3.euw4.aha.io/api/v1/products",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Authorization", "value": "Bearer {{ get_secret('AHA_API_TOKEN') }}", "overridable": false },
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "query_parameters": [
+        { "key": "per_page", "value": "200", "overridable": true },
+        { "key": "with_idea_portals", "value": "true", "overridable": true }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Aha Ideas - List Ideas",
+      "permalink": "aha-ideas-list",
+      "url": "https://gainsight3.euw4.aha.io/api/v1/ideas",
+      "method": "GET",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Authorization", "value": "Bearer {{ get_secret('AHA_API_TOKEN') }}", "overridable": false },
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Aha Ideas - Create Idea",
+      "permalink": "aha-ideas-create",
+      "url": "https://gainsight3.euw4.aha.io/api/v1/products/{{ queryParams.product_id }}/ideas",
+      "method": "POST",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Authorization", "value": "Bearer {{ get_secret('AHA_API_TOKEN') }}", "overridable": false },
+        { "key": "Content-Type", "value": "application/json", "overridable": false },
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    },
+    {
+      "name": "Aha Ideas - Vote on Idea",
+      "permalink": "aha-ideas-vote",
+      "url": "https://gainsight3.euw4.aha.io/api/v1/ideas/{{ queryParams.idea_id }}/endorsements",
+      "method": "POST",
+      "authentication": { "type": "none" },
+      "headers": [
+        { "key": "Authorization", "value": "Bearer {{ get_secret('AHA_API_TOKEN') }}", "overridable": false },
+        { "key": "Content-Type", "value": "application/json", "overridable": false },
+        { "key": "Accept", "value": "application/json", "overridable": false }
+      ],
+      "response_content_type": "application/json"
+    }
+  ]
+}
